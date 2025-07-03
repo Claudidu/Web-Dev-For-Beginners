@@ -1,50 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Web Dev for Beginners</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-  <link rel="stylesheet" href="index.css">
-  </head>
-<body>
-  <div id="app"></div>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ekxr1n6fgy");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Fidelización Me amo y punto - Medipiel</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Colores personalizados de la marca Medipiel */
+        .bg-medipiel-pink { background-color: #e73380; }
+        .text-medipiel-pink { color: #e73380; }
+        .border-medipiel-pink { border-color: #e73380; }
+        .hover\:bg-medipiel-pink-dark:hover { background-color: #c42a6b; }
+        
+        /* Estilo para el marcador del acordeón de FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .arrow-down {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
 
-    window.$docsify = {
-      loadNavbar: 'docs/_navbar.md',
-      name: 'Web Development for Beginners: A Curriculum',
-      repo: 'https://github.com/microsoft/Web-Dev-For-Beginners',
-      relativePath: true,
-      auto2top: false,
-      notFoundPage: true,
-      alias: {
-        '/(README.(.*))': '/translations/$1',
-        '#/((?!README).*)/README.(.*)': '$1/translations/README.$2',
-        '/((?!README).*)/((?!README).*)/README.(.*)': '$1/$2/translations/README.$3',
+    <!-- SECCIÓN 1: BANNER PRINCIPAL -->
+    <header class="relative bg-white">
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=2574&auto=format&fit=crop" alt="Mujer aplicando producto de cuidado de la piel"
+            onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/e73380/ffffff?text=Medipiel';">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+                <span class="block">Programa de Fidelización</span>
+                <span class="block text-medipiel-pink mt-2">Me amo y punto</span>
+            </h1>
+            <p class="mt-6 max-w-lg mx-auto text-xl text-gray-200">
+                Gana puntos por cada compra y redímelos por tus productos favoritos. Cuidarte tiene su recompensa.
+            </p>
+            <div class="mt-10">
+                <a href="#catalogo" class="inline-block bg-medipiel-pink text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-medipiel-pink-dark transition-colors duration-300">
+                    Ver Recompensas
+                </a>
+            </div>
+        </div>
+    </header>
 
-        // handle English, since English files isn't in translation folders
-        '/(README$)': '/$1',
-        '#/((?!README).*)/(README$)': '$1/$2',
-        '/((?!README).*)/((?!README).*)/(README$)': '$1/$2/$3'
-      }
-    }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "rr8xfb4j8g");
-</script>
+    <main>
+        <!-- SECCIÓN 2: INFOGRAFÍA - CÓMO FUNCIONA -->
+        <section class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Acumular y redimir es muy fácil</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Sigue estos 3 sencillos pasos para disfrutar tus beneficios.</p>
+                </div>
+                <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Paso 1 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-medipiel-pink text-white mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold text-gray-900">1. Acumula Puntos</h3>
+                        <p class="mt-2 text-base text-gray-600">Por cada $1.000 en compras en tiendas físicas y online, acumulas 1 punto. ¡No olvides dar tu cédula!</p>
+                    </div>
+                    <!-- Paso 2 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-medipiel-pink text-white mx-auto">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197m0 0A5.975 5.975 0 0112 13a5.975 5.975 0 013-1.197M15 21a9 9 0 00-6-6.803" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold text-gray-900">2. Conoce tu Saldo</h3>
+                        <p class="mt-2 text-base text-gray-600">Consulta tus puntos disponibles en la sección "Mi Cuenta" en nuestra web o pregunta en cualquier tienda.</p>
+                    </div>
+                    <!-- Paso 3 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-medipiel-pink text-white mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold text-gray-900">3. Redime Premios</h3>
+                        <p class="mt-2 text-base text-gray-600">Elige un producto del catálogo y reclámalo en tu tienda Medipiel más cercana presentando tu cédula.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CATÁLOGO DE PRODUCTOS -->
+        <section id="catalogo" class="py-16 sm:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Catálogo de Recompensas</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Estos son algunos de los productos que puedes obtener con tus puntos.</p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <!-- Producto 1 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Crema Hidratante Facial</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">150 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Protector Solar SPF 50+</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">200 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Sérum Vitamina C</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">250 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Limpiador Facial Suave</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">120 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 5 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Contorno de Ojos</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">180 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 6 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Agua Micelar</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">100 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 7 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Kit de Viaje Esencial</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">300 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 8 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Mascarilla Purificante</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">90 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 9 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Exfoliante Corporal</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">160 Puntos</p>
+                        </div>
+                    </div>
+                    <!-- Producto 10 -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="https://placehold.co/400x400/F3F4F6/333333?text=Producto" alt="Producto de belleza" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-800">Bono de Descuento</h3>
+                            <p class="mt-1 text-lg font-bold text-medipiel-pink">500 Puntos</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center text-sm text-gray-500">
+                    <p>*Catálogo sujeto a cambios. La redención de productos solo está disponible en tiendas físicas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="bg-white py-16 sm:py-24">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Preguntas Frecuentes</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Resolvemos tus dudas más comunes sobre el programa.</p>
+                </div>
+                <div class="mt-12 space-y-4">
+                    <!-- Pregunta 1 -->
+                    <details class="group bg-gray-50 p-6 rounded-lg">
+                        <summary class="flex items-center justify-between cursor-pointer">
+                            <h3 class="text-lg font-medium text-gray-900">¿Cuánto vale un punto?</h3>
+                            <span class="arrow-down transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-base text-gray-600">
+                            Cada punto se obtiene por cada $1.000 pesos en compras. Por ejemplo, una compra de $50.000 COP te otorga 50 puntos.
+                        </p>
+                    </details>
+                    <!-- Pregunta 2 -->
+                    <details class="group bg-gray-50 p-6 rounded-lg">
+                        <summary class="flex items-center justify-between cursor-pointer">
+                            <h3 class="text-lg font-medium text-gray-900">¿Cómo acumulo puntos?</h3>
+                            <span class="arrow-down transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-base text-gray-600">
+                            Acumulas puntos automáticamente con cada compra realizada en nuestras tiendas físicas o en medipiel.com.co. Es indispensable que al momento de la compra proporciones tu número de cédula para que los puntos sean asignados a tu cuenta.
+                        </p>
+                    </details>
+                    <!-- Pregunta 3 -->
+                    <details class="group bg-gray-50 p-6 rounded-lg">
+                        <summary class="flex items-center justify-between cursor-pointer">
+                            <h3 class="text-lg font-medium text-gray-900">¿Cómo redimo mis premios?</h3>
+                            <span class="arrow-down transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-base text-gray-600">
+                            Para redimir tus puntos por productos del catálogo, debes acercarte a cualquiera de nuestras tiendas físicas a nivel nacional. Presenta tu cédula de ciudadanía original al personal de la tienda y ellos te guiarán en el proceso. La redención no está disponible para compras online.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: BOTÓN DE TIENDAS -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-semibold text-gray-800">¿Listo para redimir tus puntos?</h2>
+                <p class="mt-2 text-gray-600">Encuentra la tienda Medipiel más cercana a ti.</p>
+                <div class="mt-8">
+                    <a href="https://www.medipiel.com.co/tiendas" target="_blank" class="inline-block bg-white text-medipiel-pink font-semibold py-3 px-8 rounded-lg border-2 border-medipiel-pink hover:bg-medipiel-pink hover:text-white transition-colors duration-300">
+                        Conoce nuestras tiendas
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
